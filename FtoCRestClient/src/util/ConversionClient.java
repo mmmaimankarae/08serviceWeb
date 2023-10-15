@@ -1,27 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package util;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 
-/**
- * Jersey REST client generated for REST resource:FtoC [ftoc]<br>
- * USAGE:
- * <pre>
- *        ConversionClient client = new ConversionClient();
- *        Object response = client.XXX(...);
- *        // do whatever with response
- *        client.close();
- * </pre>
- *
- * @author sarun
- */
 public class ConversionClient {
     private WebTarget webTarget;
     private Client client;
@@ -45,5 +27,4 @@ public class ConversionClient {
     public void close() {
         client.close();
     }
-    
 }

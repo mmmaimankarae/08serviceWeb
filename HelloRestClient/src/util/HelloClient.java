@@ -1,30 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package util;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 
-/**
- * Jersey REST client generated for REST resource:Hello [hello]<br>
- * USAGE:
- * <pre>
- *        HelloClient client = new HelloClient();
- *        Object response = client.XXX(...);
- *        // do whatever with response
- *        client.close();
- * </pre>
- *
- * @author sarun
- */
 public class HelloClient {
     private WebTarget webTarget;
     private Client client;
+    /* Base URI ไปที่Service */
     private static final String BASE_URI = "http://localhost:8080/HelloRestService/webresources";
 
     public HelloClient() {
@@ -45,5 +28,4 @@ public class HelloClient {
     public void close() {
         client.close();
     }
-    
 }

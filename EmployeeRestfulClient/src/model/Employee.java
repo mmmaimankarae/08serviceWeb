@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model;
 
 import java.io.Serializable;
@@ -18,10 +12,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author sarun
- */
 @Entity
 @Table(name = "EMPLOYEE")
 @XmlRootElement
@@ -31,16 +21,16 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Employee.findByName", query = "SELECT e FROM Employee e WHERE e.name = :name"),
     @NamedQuery(name = "Employee.findBySalary", query = "SELECT e FROM Employee e WHERE e.salary = :salary")})
 public class Employee implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "ID")
     private Integer id;
-    @Size(max = 40)
+    @Size(max = 80)
     @Column(name = "NAME")
     private String name;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "SALARY")
     private Double salary;
 
@@ -84,7 +74,6 @@ public class Employee implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Employee)) {
             return false;
         }
@@ -99,5 +88,4 @@ public class Employee implements Serializable {
     public String toString() {
         return "model.Employee[ id=" + id + " ]";
     }
-    
 }

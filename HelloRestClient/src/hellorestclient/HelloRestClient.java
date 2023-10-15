@@ -1,30 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hellorestclient;
 
 import java.io.StringReader;
 import javax.xml.bind.JAXB;
 import util.HelloClient;
 
-/**
- *
- * @author sarun
- */
 public class HelloRestClient {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        /* XML File */
         HelloClient obj = new HelloClient();
-        String xml = obj.getXml("Sarun");
+        String xml = obj.getXml("Mine");
         System.out.println(xml);
+        
+        /* แปลง XML ให้กลายเป็นผลลัพธ์ */
         String string = (String) JAXB.unmarshal(new StringReader(xml), String.class);
         System.out.println(string);
     }
-    
 }

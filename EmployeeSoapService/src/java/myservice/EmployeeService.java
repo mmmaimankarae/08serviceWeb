@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package myservice;
 
 import java.util.logging.Level;
@@ -21,10 +15,6 @@ import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
 import model.Employee;
 
-/**
- *
- * @author sarun
- */
 @WebService(serviceName = "EmployeeService")
 public class EmployeeService {
     @PersistenceContext(unitName = "EmployeeSoapServicePU")
@@ -32,22 +22,12 @@ public class EmployeeService {
     @Resource
     private javax.transaction.UserTransaction utx;
 
-    /**
-     * Web service operation
-     * @param id
-     * @return 
-     */
     @WebMethod(operationName = "findEmployeeById")
     public Employee findEmployeeById(@WebParam(name = "id") int id) {
         Employee emp = em.find(Employee.class, id);
         return emp;
     }
 
-    /**
-     * Web service operation
-     * @param emp
-     * @return 
-     */
     @WebMethod(operationName = "updateEmployee")
     public int updateEmployee(@WebParam(name = "emp") Employee emp) {
         try {
@@ -77,5 +57,4 @@ public class EmployeeService {
         }
         return 1;
     }
-    
 }
